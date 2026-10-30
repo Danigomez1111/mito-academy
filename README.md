@@ -159,16 +159,39 @@ Para consumir los endpoints protegidos:
 
 Este proyecto fue desarrollado utilizando **Google Antigravity**, aprovechando su sistema de personalización agéntica ubicado en el directorio `.agents/` en la raíz del repositorio.
 
-### Estructura Agéntica del Proyecto (`.agents/`)
+### Estructura Agéntica del Proyecto (`.agents/` y `specs/`)
 ```text
-.agents/
-├── skills/
-│   └── dr-jskill/               # Skill especializada en proyectos Java 25 + Spring Boot 4
-│       └── SKILL.md
-└── subagents/
-    ├── crud-builder.md          # Subagente generador de capas CRUD completas
-    ├── code-review.md           # Subagente revisor de código y convenciones de arquitectura
-    └── code-tester.md           # Subagente creador de pruebas unitarias (JUnit 5 + Mockito)
+mito-academy/
+├── specs/
+│   └── SPEC.md                  # Especificación Técnica y Funcional (Spec-Driven Development)
+└── .agents/
+    ├── skills/
+    │   └── dr-jskill/           # Skill especializada en proyectos Java 25 + Spring Boot 4
+    │       └── SKILL.md
+    └── subagents/
+        ├── crud-builder.md      # Subagente generador de capas CRUD completas
+        ├── code-review.md       # Subagente revisor de código y convenciones de arquitectura
+        └── code-tester.md       # Subagente creador de pruebas unitarias (JUnit 5 + Mockito)
+```
+
+### 0. Spec-Driven Development (`specs/SPEC.md`) y Cómo Probar que Funcione
+
+El proyecto incluye el archivo **`specs/SPEC.md`**, donde se documenta el contrato de entrada (*Input Contract*) de todas las verticales (`Estudiante`, `Curso`, `Matricula`, `DetalleMatricula` y Seguridad `JWT`), junto con una plantilla para crear nuevas entidades.
+
+#### A. Cómo probar un Spec con los Subagentes en Antigravity
+1. Abre o edita `specs/SPEC.md` (o crea un nuevo archivo en `specs/`, por ejemplo `specs/profesor-spec.md`) usando la plantilla de la sección 4 de `specs/SPEC.md`.
+2. En el chat de **Antigravity**, ejecuta el siguiente prompt para que los tres subagentes trabajen en cadena a partir de tu Spec:
+   > *"Lee la especificación en `specs/SPEC.md`. Usa el subagente `crud-builder` para generar las capas de la entidad indicada, luego ejecuta `code-tester` para crear sus pruebas unitarias y finalmente pasa `code-reviewer` para verificar que cumpla con todas las convenciones del proyecto."*
+
+#### B. Cómo probar las Especificaciones de Pruebas Unitarias (`src/test/`)
+Para comprobar que todos los controladores y servicios cumplen con la especificación sin errores, ejecuta la suite de pruebas unitarias (JUnit 5 + Mockito + AssertJ):
+
+```bash
+# Ejecutar todos los tests del proyecto
+mvn test
+
+# Ejecutar únicamente los tests unitarios de servicios y controladores (sin requerir PostgreSQL activo)
+mvn test -Dtest="*ServiceImplTest,*ControllerTest,EstudianteTest"
 ```
 
 ### 1. ¿Qué son los Agentes y Subagentes en Antigravity?
