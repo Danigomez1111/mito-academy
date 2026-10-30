@@ -1,0 +1,22 @@
+#server:
+#  port: 8080
+spring:
+  config:
+    import: optional:file:.env[.properties]
+  jpa:
+    database: postgresql
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/mito_academy}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  threads:
+    virtual:
+      enabled: true
+
+jwt:
+  secret: ${JWT_SECRET}
+  expiration: 18000000

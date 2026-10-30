@@ -1,0 +1,380 @@
+{
+  "info": {
+    "_postman_id": "fce32511-eae6-4761-ada4-2d8dbc7539fd",
+    "name": "MitoAcademy - Trabajo Práctico Final",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "59173698",
+    "_collection_link": "https://go.postman.co/collection/59173698-fce32511-eae6-4761-ada4-2d8dbc7539fd?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "1. Estudiantes",
+      "item": [
+        {
+          "name": "Listar Estudiantes",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/v1/estudiantes",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "v1",
+                "estudiantes"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Estudiante por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/v1/estudiantes/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "v1",
+                "estudiantes",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Registrar Estudiante",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombres\": \"Jaime\",\n  \"apellidos\": \"Medina\",\n  \"dni\": \"12345678\",\n  \"edad\": 32\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/v1/estudiantes",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "v1",
+                "estudiantes"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar Estudiante",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombres\": \"Jaime Alberto\",\n  \"apellidos\": \"Medina\",\n  \"dni\": \"12345678\",\n  \"edad\": 33\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/v1/estudiantes/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "v1",
+                "estudiantes",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Eliminar Estudiante",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/v1/estudiantes/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "v1",
+                "estudiantes",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Query Funcional: Estudiantes Ordenados Descendente por Edad",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/v1/estudiantes/ordenados-edad",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "v1",
+                "estudiantes",
+                "ordenados-edad"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "2. Cursos",
+      "item": [
+        {
+          "name": "Listar Cursos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/v1/cursos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "v1",
+                "cursos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Curso por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/v1/cursos/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "v1",
+                "cursos",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Registrar Curso",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Programación\",\n  \"siglas\": \"PROG\",\n  \"estado\": true\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/v1/cursos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "v1",
+                "cursos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar Curso",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Programación Avanzada\",\n  \"siglas\": \"PROG2\",\n  \"estado\": true\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/v1/cursos/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "v1",
+                "cursos",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Eliminar Curso",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/v1/cursos/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "v1",
+                "cursos",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "3. Matrículas",
+      "item": [
+        {
+          "name": "Listar Matrículas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/v1/matriculas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "v1",
+                "matriculas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Matrícula por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/v1/matriculas/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "v1",
+                "matriculas",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Registrar Matrícula",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fechaMatricula\": \"2026-10-23T18:00:00\",\n  \"estudiante\": {\n    \"idEstudiante\": 1\n  },\n  \"detalleMatricula\": [\n    {\n      \"curso\": {\n        \"idCurso\": 1\n      },\n      \"aula\": \"A-101\"\n    }\n  ],\n  \"estado\": true\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/v1/matriculas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "v1",
+                "matriculas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Query Funcional: Relación Cursos y Estudiantes (Map)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/v1/matriculas/cursos-estudiantes",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "v1",
+                "matriculas",
+                "cursos-estudiantes"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
